@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style index.css">
+    <title>bazi</title>
+</head>
+<body dir="rtl">
+    <script src="js/script.js"></script>
+    <div>
+        <div id="nav" class="navar clearfix">
+            <div id="nav" class="part">
+                <p class="search"><img class="search-icon" src="picture/search.png">جست و جو ...</p>
+            </div>
+            <a href="index.html"><img src="picture/logo.png" style="float: right;width: 150px; margin: 15px;"></a>
+            <div id="nav" class="part">
+            <ul>
+                <li class="bama" style="border-top-left-radius: 5px;border-bottom-left-radius: 5px;"><a href="تماس با ما.html">تماس باما</a></li>
+                <li class="bama" style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;"><a href="درباره ما.html">درباره ما</a></li>
+                <li><a href="سورس کد.html">سورس کد</a></li>
+                <li><a href="دانلود.html">دانلودها</a></li>
+                <li><a href="مقالات.html">مقالات</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">برترین</a></li>
+                        <li><a href="#">جدیدترین</a></li>
+                    </ul>
+                </li>
+                <li><a href="آموزش ها.html">آموزش ها</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">html</a>
+                            
+                            <ul class="sub-menu">
+                                <li><a href="#">مقدماتی</a></li>
+                                <li><a href="#">پیشرفته</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">css</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">مقدماتی</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+            <div>
+                <a href="#"><p class="login">ورود</p></a>
+                <a href="#"><p class="login">ثبت نام</p></a>
+            </div>
+            <div>
+                <a href="#"><img src="picture/prof.png" style="border-radius: 100px; width: 40px;float: left;margin: 10px;"></a>
+            </div>
+            <div>
+                <a href="#"></a><img src="picture/tlg.png" style="width: 30px; margin: 15px; float: left;"></a>
+                <a href="#"><img src="picture/yt.png" style="width: 30px; float: left; margin: 20px;"></a>
+            </div>
+            <div class="clear-fix"></div>
+        </div>
+    </div>
+    <h1 class="h1">جالب بود؟</h1>
+    <h2 class="h1">سورس کد آن </h2>
+    <hr>
+    <h3 class="h1">js: </h3>
+    <div dir="ltr" class="code">
+        <code dir="ltr">
+            let randomNumber = Math.random() * 20
+            <br>
+    randomNumber = Math.floor(randomNumber)
+    <br>
+    <br>
+    while(true){
+        <br>
+        const userNumber = prompt('لطفا یک عدد وارد کنید')
+        <br>
+        if (userNumber == randomNumber){
+            <br>
+            alert('باریکلا')
+            <br>
+            break
+            <br>
+        }
+        <br>
+        else if (userNumber < randomNumber){
+            <br>
+            alert('بزرگتر')
+            <br>
+        }
+        <br>
+        else{
+            <br>
+            alert('کوچکتر')
+            <br>
+        }
+        <br>
+    }
+    <br>
+    </code>
+</body>
+</html>
