@@ -18,3 +18,9 @@ class BlogHomeView(ListView):
         base_query = super(BlogHomeView, self).get_queryset()
         data = base_query.filter(is_show=True)
         return data
+
+
+class BlogPostView(View):
+    def get(self,requrst,id):
+        post = BlogPost.objects.get(id=id)
+        return render(requrst,'blog_post.html',context={'post':post})

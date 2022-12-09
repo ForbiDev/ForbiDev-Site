@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+
+    <h2>{{ post.title }}</h2>
+    <b>توضیحات کوتاه : </b>
+    <p>{{ post.short_description }}</p>
+    <br><br>
+    <p>{{ post.content }}</p>
+{% endblock %}

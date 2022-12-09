@@ -1,5 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %} مقالات {% endblock %}
+
+{% block content %}
+
 {% for post in Posts %}
-    <h2>{{ post.title }}</h2>
+    <a href="{% url 'blog-post' id=post.id %}"><h2>{{ post.title }}</h2></a>
     <p>{{ post.short_description }}</p>
     <p style="color: red">{{ post.author }}</p>
 {% endfor %}
@@ -17,3 +23,5 @@
 {% if page_obj.has_next %}
     <li><a href="?page={{ page_obj.next_page_number }}">بعدی</a></li>
 {% endif %}
+
+{% endblock %}
