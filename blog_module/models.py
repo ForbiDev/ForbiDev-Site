@@ -14,3 +14,6 @@ class BlogPost(models.Model):
     class Meta:
         verbose_name = 'مقاله'
         verbose_name_plural = 'مقالات'
+
+    def __str__(self):
+        return self.title
