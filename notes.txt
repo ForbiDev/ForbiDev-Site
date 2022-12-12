@@ -1,0 +1,2 @@
+Todos : 1- add visit count to blog post : 
+Links : https://github.com/QueraTeam/django-visit-count | https://pypi.org/project/django-visits/ | https://github.com/mhadiahmed/Django-count-Visitors (For todo 1)
