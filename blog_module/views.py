@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 from django.urls import reverse
@@ -7,7 +7,7 @@ from django.views import View
 from django.views.generic import ListView
 
 from .forms import CommentForm
-from .models import BlogPost
+from .models import BlogPost, PostComment
 
 
 class BlogHomeView(ListView):
@@ -24,9 +24,11 @@ class BlogHomeView(ListView):
 
 class BlogPostView(View):
     def get(self,requrst,id):
-        post = BlogPost.objects.get(id=id)
+        post = get_object_or_404(BlogPost, id=id)
+        # post = BlogPost.objects.get(id=id)
         form = CommentForm
-        return render(requrst,'blog_post.html',context={'post':post,'form':form})
+        comments = PostComment.objects.filter(post=id)
+        return render(requrst,'blog_post.html',context={'post':post,'form':form, 'comments':comments})
     def post(self,request:HttpRequest,id):
         form = CommentForm(request.POST)
         if form.is_valid():

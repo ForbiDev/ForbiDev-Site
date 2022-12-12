@@ -12,6 +12,17 @@
     <br><br><br><br><br>
 
     <h3>کامنت ها</h3>
+    <hr>
+    {% for comment in comments %}
+        {% if comment.is_show %}
+        <b>{{ comment.fullname }}</b> گفته:
+        <p>{{ comment.content }}</p>
+        <hr>
+        {% endif %}
+    {% endfor %}
+
+
+
     کامنتی بنویسید :
 
 
