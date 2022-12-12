@@ -1,3 +1,4 @@
+import sweetify
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -35,4 +36,9 @@ class BlogPostView(View):
             comment = form.save(commit=False)
             comment.post = BlogPost.objects.get(id=id)
             comment.save()
+            sweetify.success(request, 'نظر شما با موفقیت ثبت شد')
             return redirect(reverse('blog-post', args=[id]))
+        sweetify.error(request,'مشکللللل')
+        post = get_object_or_404(BlogPost, id=id)
+        comments = PostComment.objects.filter(post=id)
+        return render(request,'blog_post.html',context={'post':post,'form':form, 'comments':comments})
