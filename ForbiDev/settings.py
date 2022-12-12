@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account_module',
-    'blog_module'
+    'blog_module',
+    'sweetify',
 ]
 
 MIDDLEWARE = [
