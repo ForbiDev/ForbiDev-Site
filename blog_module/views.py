@@ -1,7 +1,8 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpRequest
+from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.urls import reverse
 from django.views import View
 from django.views.generic import ListView
 
@@ -26,5 +27,10 @@ class BlogPostView(View):
         post = BlogPost.objects.get(id=id)
         form = CommentForm
         return render(requrst,'blog_post.html',context={'post':post,'form':form})
-    # def post(self,request):
-    #
+    def post(self,request:HttpRequest,id):
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = BlogPost.objects.get(id=id)
+            comment.save()
+            return redirect(reverse('blog-post', args=[id]))

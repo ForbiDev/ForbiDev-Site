@@ -13,7 +13,9 @@
 
     <h3>کامنت ها</h3>
     کامنتی بنویسید :
-    <form action="">
+
+
+    <form action="{% url 'blog-post' id=post.id %}" method="post">
     {% csrf_token %}
     {% for f in form %}
 
@@ -23,6 +25,6 @@
         <br>
 
     {% endfor %}
-    <button type="submit">ثبت نظر</button>
+    <input type="submit" value="ثبت نظر">
     </form>
 {% endblock %}
