@@ -26,3 +26,10 @@ class PostComment(models.Model):
     post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, verbose_name='پست هدف')
     date = models.DateTimeField(verbose_name='تاریخ ایجاد',editable=False, auto_now_add=True)
     is_show = models.BooleanField(verbose_name='تائید',default=True)
+
+    class Meta:
+        verbose_name = 'نظر'
+        verbose_name_plural = 'نظرات'
+
+    def __str__(self):
+        return f"{self.fullname} ({self.email})"
