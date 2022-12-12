@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
 
+from .forms import CommentForm
 from .models import BlogPost
 
 
@@ -23,4 +24,7 @@ class BlogHomeView(ListView):
 class BlogPostView(View):
     def get(self,requrst,id):
         post = BlogPost.objects.get(id=id)
-        return render(requrst,'blog_post.html',context={'post':post})
+        form = CommentForm
+        return render(requrst,'blog_post.html',context={'post':post,'form':form})
+    # def post(self,request):
+    #

@@ -9,4 +9,20 @@
     <p>{{ post.short_description }}</p>
     <br><br>
     <p>{{ post.content }}</p>
+    <br><br><br><br><br>
+
+    <h3>کامنت ها</h3>
+    کامنتی بنویسید :
+    <form action="">
+    {% csrf_token %}
+    {% for f in form %}
+
+        <b>{{ f.label }}</b>
+        <br>
+        {{ f }}
+        <br>
+
+    {% endfor %}
+    <button type="submit">ثبت نظر</button>
+    </form>
 {% endblock %}
