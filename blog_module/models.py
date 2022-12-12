@@ -17,3 +17,12 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class PostComment(models.Model):
+    fullname = models.CharField(max_length=30, verbose_name='نام و نام خانوادگی')
+    email = models.EmailField(verbose_name='ایمیل')
+    content = models.TextField(verbose_name='متن کامنت')
+    post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, verbose_name='پست هدف')
+    date = models.DateTimeField(verbose_name='تاریخ ایجاد',editable=False, auto_now_add=True)
+    is_show = models.BooleanField(verbose_name='تائید',default=True)
