@@ -61,6 +61,25 @@ a{
 	padding: 5px 10px;
 	box-shadow: 2px 3px 10px  #16181b;
 }
+#nav .sub-menu > .up{
+	border-radius: 20px;
+	display: block;
+	width: 120px;
+	background-color: #393e46;
+	color: white;
+	padding: 5px 10px;
+	box-shadow: 2px 3px 10px  #16181b;
+}
+
+#nav .sub-menu > .down{
+	border-radius: 20px;
+	display: block;
+	width: 120px;
+	background-color: #393e46;
+	color: white;
+	padding: 5px 10px;
+	box-shadow: 2px 3px 10px  #16181b;
+}
 
 #nav .sub-menu > li:hover > a{
 	background-color: #00adb5;
@@ -291,4 +310,15 @@ a{
 	background-color: #3b4148;
 	border-radius: 10px;
 	cursor: pointer;
+}
+.up{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.down{
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.alone{
+	border-radius: 10px;
 }
