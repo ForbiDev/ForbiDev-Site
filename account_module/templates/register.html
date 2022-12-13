@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %} ثبت نام {% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% for form in forms %}
+            <h4>{{ form.label }}</h4>
+            {{ form }}
+            <span style="color: red">{{ form.errors }}</span>
+        {% endfor %}
+
+        <input type="submit" value="ثبت نام">
+    </form>
+
+{% endblock %}

@@ -1,5 +1,6 @@
 from django import forms
 from django.core import validators
+from django.core.exceptions import ValidationError
 
 x = 1
 class RegisterForm(forms.Form):
@@ -17,3 +18,12 @@ class RegisterForm(forms.Form):
     confirm_password = forms.CharField(label='کلمه عبور',widget=forms.PasswordInput())
     first_name = forms.CharField(label='نام',validators=[validators.MaxLengthValidator(100),])
     last_name = forms.CharField(label='نام',validators=[validators.MaxLengthValidator(100),])
+
+    def clean_confirm_password(self):
+        password = self.cleaned_data.get('password')
+        conf = self.cleaned_data.get('confirm_password')
+        if conf == password:
+            return True
+        else:
+            raise ValidationError('کلمه عبور با تکرار یکسان نمیباشد')
+
