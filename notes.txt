@@ -1,3 +1,3 @@
-Todos : 1- add visit count to blog post |  2- use sweet alert for message (comment)
+Todos : 1- add visit count to blog post |  2- use sweet alert for message (comment) | 3- fix account home with decorators 
 Links : https://github.com/QueraTeam/django-visit-count | https://pypi.org/project/django-visits/ | https://github.com/mhadiahmed/Django-count-Visitors (For todo 1)
 

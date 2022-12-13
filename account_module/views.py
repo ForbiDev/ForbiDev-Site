@@ -5,9 +5,7 @@ from django.views import View
 
 class AccountView(View):
     def get(self, request):
-        pass
-    def post(self,request):
-        pass
+        return render(request, 'account_home.html')
 
 class RegisterView(View):
     def get(self, request):

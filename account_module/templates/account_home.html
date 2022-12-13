@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block title %} حساب کاربری {% endblock %}
+
+{% block content %}
+<a href="{% url 'register' %}">
+    <h2>ثبت نام</h2>
+</a><a href="{% url 'login' %}">
+    <h2>ورود</h2>
+</a><a href="{% url 'logout' %}">
+    <h2>خروج</h2>
+</a>
+{% endblock %}
