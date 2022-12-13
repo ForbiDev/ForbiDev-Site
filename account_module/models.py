@@ -7,7 +7,7 @@ class User(AbstractUser):
     email_active_code = models.CharField(max_length=100, verbose_name='کد فعالسازی')
     profile = models.ImageField(upload_to='images/avatars', null=True, blank=True, verbose_name='پروفایل کاربر')
     bio = models.TextField(verbose_name='بیوگرافی کاربر')
-
+    is_active = models.BooleanField(default=False,verbose_name='فعالسازی شده')
     class Meta:
         verbose_name='کاربر'
         verbose_name_plural = 'کاربران'

@@ -17,7 +17,7 @@ class RegisterForm(forms.Form):
     ])
     confirm_password = forms.CharField(label='کلمه عبور',widget=forms.PasswordInput())
     first_name = forms.CharField(label='نام',validators=[validators.MaxLengthValidator(100),])
-    last_name = forms.CharField(label='نام',validators=[validators.MaxLengthValidator(100),])
+    last_name = forms.CharField(label='نام خانوادگی',validators=[validators.MaxLengthValidator(100),])
 
     def clean_confirm_password(self):
         password = self.cleaned_data.get('password')
