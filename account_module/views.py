@@ -1,4 +1,4 @@
-from django.contrib.auth import logout
+from django.contrib.auth import logout, login
 from django.http import HttpRequest
 from django.shortcuts import render, redirect
 
@@ -48,8 +48,22 @@ class LoginView(View):
         contex = dict(forms=form)
         return render(request,'login.html',contex)
     def post(self,request):
-        pass
-
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user_mail = form.cleaned_data.get('email')
+            user_pass = form.cleaned_data.get('password')
+            user : User = User.objects.filter(email__exact=user_mail).first()
+            if user is not None:
+                pass_correct = user.check_password(user_pass)
+                if pass_correct:
+                    login(request,user)
+                    return redirect(reverse('account-home'))
+                else:
+                    form.add_error('password','رمز عبور نادرست میباشد')
+            else:
+                form.add_error('email','کاربری با این ایمیل پیدا نشد')
+            contex = {'forms':form}
+            return render(request,'login.html',contex)
 class LogoutView(View):
     def get(self, request):
         logout(request)
