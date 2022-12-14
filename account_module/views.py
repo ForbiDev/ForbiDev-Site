@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.utils.crypto import get_random_string
 from django.views import View
 
-from account_module.forms import RegisterForm
+from account_module.forms import RegisterForm, LoginForm
 from account_module.models import User
 
 
@@ -34,7 +34,7 @@ class RegisterView(View):
             elif mail:
                 form.add_error('email', 'کاربری با این ایمیل وجود دارد')
             else:
-                New_User = User(username=user_name,is_active=False, first_name=user_first,last_name=user_last,email_active_code=get_random_string(60))
+                New_User = User(username=user_name,is_active=True, first_name=user_first,last_name=user_last,email_active_code=get_random_string(60))
                 New_User.set_password(user_pass)
                 New_User.save()
 
@@ -44,7 +44,9 @@ class RegisterView(View):
 
 class LoginView(View):
     def get(self, request):
-        pass
+        form = LoginForm()
+        contex = dict(forms=form)
+        return render(request,'login.html',contex)
     def post(self,request):
         pass
 

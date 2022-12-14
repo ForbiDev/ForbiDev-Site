@@ -27,3 +27,7 @@ class RegisterForm(forms.Form):
         else:
             raise ValidationError('کلمه عبور با تکرار یکسان نمیباشد')
 
+
+class LoginForm(forms.Form):
+    email = forms.EmailField(label='ایمیل',widget=forms.EmailInput())
+    password = forms.CharField(label='رمز عبور',widget=forms.PasswordInput())
