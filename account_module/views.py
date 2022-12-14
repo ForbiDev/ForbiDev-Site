@@ -11,8 +11,8 @@ from account_module.models import User
 
 
 class AccountView(View):
-    def get(self, request):
-        return render(request, 'account_home.html')
+    def get(self, request:HttpRequest):
+        return render(request, 'account_home.html', {'user':request.user})
 
 class RegisterView(View):
     def get(self, request):

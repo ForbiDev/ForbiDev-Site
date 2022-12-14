@@ -3,11 +3,14 @@
 {% block title %} حساب کاربری {% endblock %}
 
 {% block content %}
+    {% if not user.is_authenticated %}
 <a href="{% url 'register' %}">
     <h2>ثبت نام</h2>
 </a><a href="{% url 'login' %}">
     <h2>ورود</h2>
+{% else %}
 </a><a href="{% url 'logout' %}">
     <h2>خروج</h2>
 </a>
+    {% endif %}
 {% endblock %}
