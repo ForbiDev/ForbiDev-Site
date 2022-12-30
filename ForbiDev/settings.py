@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account_module',
-    'blog_module'
+    'blog_module',
+    'course_module',
 ]
 
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
