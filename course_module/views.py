@@ -7,6 +7,6 @@ from .models import CourseModel
 
 class CourseListView(View):
     def get(self,request):
-        courses = CourseModel
-        
-        return render(request,'course_list.html',{'couses':courses})
+        courses = CourseModel.objects.filter(is_show=True)
+
+        return render(request,'course_list.html',{'courses':courses})
