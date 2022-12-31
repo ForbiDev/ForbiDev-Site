@@ -11,7 +11,7 @@ Levels = (
 class CourseModel(models.Model):
     title = models.CharField(max_length=60, verbose_name='عنوان')
     description = models.TextField(verbose_name='توضیحات')
-    image = models.ImageField(upload_to='uploads/image/courses', verbose_name='تصویر')
+    image = models.ImageField(upload_to='image/courses', verbose_name='تصویر')
     teacher = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='مدرس')
     price = models.IntegerField(verbose_name='قیمت')
     level = models.CharField(verbose_name='سطح',choices=Levels,max_length=15)
@@ -19,3 +19,7 @@ class CourseModel(models.Model):
     slug = models.SlugField(verbose_name='آدرس',unique=True, default='x')
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'دوره'
+        verbose_name_plural = 'دوره ها'
