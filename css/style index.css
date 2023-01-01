@@ -1,7 +1,12 @@
 body{
 	background-color: #d4d4d4;
+	font-family: 'iranSans', FontsFree-Net-ir_sans;;
 }
-
+@font-face
+{
+	font-family: 'iranSans';
+	src: url(font/FontsFree-Net-ir_sans.ttf);
+}
 *{
 	margin: 0;
 	padding: 0;
@@ -50,7 +55,8 @@ a{
 /* styles for sub menu */
 #nav .sub-menu{
 	display: none;
-	position: absolute;			
+	position: absolute;	
+	height: 20px;
 }
 
 #nav .sub-menu > li > a{
@@ -287,11 +293,10 @@ a{
 .hhh{
 	background-color: #222831;
 	width: 500px;
-	height: 400px;
+	height: 420px;
 	margin: 30px;
 	border-radius: 30px 100px 30px 30px;
 	box-shadow: 2px 2px 30px  #16181b;
-	float: right;
 }
 .review{
 	display: table;
