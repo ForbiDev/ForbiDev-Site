@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import CourseModel
+from .models import CourseModel, CourseSeason, CourseVideo
 
 
 class CourseAdmin(admin.ModelAdmin):
@@ -10,3 +10,5 @@ class CourseAdmin(admin.ModelAdmin):
 
 
 admin.site.register(CourseModel, CourseAdmin)
+admin.site.register(CourseSeason)
+admin.site.register(CourseVideo)

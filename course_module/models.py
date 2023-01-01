@@ -30,7 +30,7 @@ class CourseSeason(models.Model):
     course = models.ForeignKey(CourseModel,on_delete=models.CASCADE, verbose_name='دوره')
 
     def __str__(self):
-        self.title
+        return  self.title
 
     class Meta:
         verbose_name = 'فصل'
@@ -43,7 +43,7 @@ class CourseVideo(models.Model):
     video = models.FileField(upload_to='videos/courses',verbose_name='ویدیو')
 
     def __str__(self):
-        self.title
+        return self.title
 
     class Meta:
         verbose_name = 'ویدیو'
