@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{ course.title }} {% endblock %}
+
+{% block content %}
+    <h2>{{ course.title }}</h2>
+    {% for season in seasons %}
+        <details>
+            <summary>{{ season.title }}</summary>
+            {% for video in videos %}
+                {% if video.season.id == season.id %}
+                    <details>
+                    <summary>{{ video.title }}</summary>
+                    <video controls="controls" type="video/mp4" src="{{ video.video.url }}" width="500"></video>
+                    <p>{{ video.short_description }}</p>
+                    </details>
+                {% endif %}
+            {% endfor %}
+
+        </details>
+    {% endfor %}
+
+
+{% endblock %}
