@@ -5,7 +5,7 @@
 {% block content %}
 
     {% for course in courses %}
-        <a href=""><h2>{{ course.title }}</h2></a>
+        <a href="{% url 'course-page' slug=course.slug %}"><h2>{{ course.title }}</h2></a>
         <img src="{{ course.image.url }}" alt="{{ course.title }}" width="300px" height="200px">
         <p>{% if course.level == 'A' %}
             مقدماتی
