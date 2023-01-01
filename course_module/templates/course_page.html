@@ -4,6 +4,32 @@
 
 {% block content %}
     <h2>{{ course.title }}</h2>
+
+    <p>
+    مدرس :
+    {{ course.teacher }}
+    </p>
+    <p>
+    سطح دوره :
+{% if course.level == 'A' %}
+            مقدماتی
+            {% elif course.level == 'B' %}
+            متوسط
+            {% else %}
+            پیشرفته
+            {% endif %}
+    </p>
+    <p>
+    قیمت
+    {% if course.price == 0 %}
+        رایگان
+    {% else %}
+        {{ course.price }}
+    {% endif %}
+    </p>
+
+    <h3>درباره دوره</h3>
+    <p>{{ course.description }}</p>
     {% for season in seasons %}
         <details>
             <summary>{{ season.title }}</summary>
